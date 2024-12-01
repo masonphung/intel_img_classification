@@ -2,13 +2,20 @@
 # pip install -r /path/to/requirements.txt
 
 # required modules
-pandas
-numpy
+pandas==2.2.3
+numpy==1.26.4
 glob
 os
 matplotlib.pyplot
-cv2
-seaborn
-sklearn.metrics
-tensorflow
-keras_tuner
+opencv-python==4.10.0.84
+seaborn==0.13.2
+plotly==5.24.1
+scikit-learn==1.5.2
+tensorflow==2.16.2
+keras_tuner==1.4.7
+random
+pyplot
+npformat
+# for macos
+tensorflow-metal==1.1.0
+tensorflow-macos==2.16.2

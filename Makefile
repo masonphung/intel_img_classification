@@ -16,9 +16,12 @@ PYTHON_INTERPRETER = python
 requirements:
 	$(PYTHON_INTERPRETER) -m pip install -U pip
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
-	
 
-
+## Install Graphviz using Homebrew
+.PHONY: install-graphviz
+install-graphviz:
+	@echo "Installing Graphviz..."
+	brew install graphviz || echo "Graphviz is already installed."
 
 ## Delete all compiled Python files
 .PHONY: clean
@@ -38,16 +41,15 @@ lint:
 format:
 	black --config pyproject.toml intel_img_classification
 
-
-
-
-
-
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
 
 
+## Install all project requirements, including Graphviz and Python dependencies
+.PHONY: install
+install: install-graphviz requirements
+	@echo "All dependencies installed successfully!"
 
 #################################################################################
 # Self Documenting Commands                                                     #
